@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobby – By me</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(145deg, #0d0d0f, #1a1418);
+            color: #e8dfe9;
+            font-family: "Poppins", sans-serif;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        .rain-glass {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            backdrop-filter: blur(6px);
+        }
+
+        .raindrop {
+            position: absolute;
+            width: 2px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: drop 1.7s linear infinite;
+        }
+
+        @keyframes drop {
+            0% { transform: translateY(-100px); opacity: 0; }
+            10% { opacity: 0.3; }
+            90% { opacity: 0.3; }
+            100% { transform: translateY(110vh); opacity: 0; }
+        }
+        .glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.4;
+            animation: float 10s ease-in-out infinite alternate;
+        }
+
+        .pink { background: #d87aa3; top: 10%; left: 10%; }
+        .purple { background: #b19cf5; top: 50%; right: 5%; animation-delay: 3s; }
+
+        @keyframes float {
+            to { transform: translateY(-50px); }
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+            z-index: 20;
+        }
+
+        .navbar a {
+            margin: 0 18px;
+            color: #8f28d8;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a:hover {
+            color: #b61ab3;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 600;
+            color: #f4b4c5;
+        }
+
+        h2 {
+            font-weight: 300;
+            color: #cbbccd;
+            margin-top: -10px;
+        }
+
+        .card {
+            margin: 50px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: 80%;
+        }
+
+        .button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 30px;
+            background: #c76485;
+            color: white;
+            border-radius: 40px;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #8f8291;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="rain-glass" id="rainLayer"></div>
+
+<div class="glow pink"></div>
+<div class="glow purple"></div>
+<div class="navbar">
+    <a href="My hobby.html">Home</a>
+    <a href="1st hobby.html">Music</a>
+    <a href="2nd hobby.html">Basketball</a>
+    <a href="3rd Hobby.html">Gaming</a>
+</div>
+
+<div class="container">
+    <h1>My Hobby</h1>
+    <h2>Made by me</h2>
+
+    <div class="card">
+    <h2>About This Website</h2>
+    <p>
+        This website was created to show my personal interests and hobbies.
+        It represents the things I enjoy doing in my free time and what
+        helps me relax and express myself.
+    </p>
+    
+</div>
+
+<div class="card">
+    <h2>Why Hobbies Matter</h2>
+    <p>
+        Hobbies are important because they help reduce stress, improve
+        creativity, and give us something to look forward to.
+        They also help us learn new skills and build confidence.
+    </p>
+</div>
+
+<div class="card">
+    <h2>My Main Hobbies</h2>
+    <p>
+        🎵 <strong>Music</strong> – Listening to music helps me relax and
+        express my emotions.<br><br>
+        🏀 <strong>Basketball</strong> – Playing basketball keeps me active
+        and teaches teamwork and discipline.<br><br>
+        🎮 <strong>Gaming</strong> – Gaming helps me unwind and have fun
+        while improving focus and problem-solving skills.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Design Inspiration</h2>
+    <p>
+        The dark colors, soft pink highlights, and rain effects are inspired
+        by Joji’s <strong>SMITHEREENS</strong> album. I wanted the page to feel
+        calm, emotional, and peaceful, like listening to music on a rainy night.
+    </p>
+</div>
+
+<div class="card">
+    <h2>What You’ll Find on Each Page</h2>
+    <p>
+        Each page focuses on one hobby and explains why it is important to me.
+        You’ll also find visuals, effects, and layouts that match the mood of
+        each hobby.
+    </p>
+</div>
+
+    <footer>
+        Made with love (& sadness)
+    </footer>
+</div>
+
+<script>
+    const rainLayer = document.getElementById("rainLayer");
+
+    for (let i = 0; i < 120; i++) {
+        const drop = document.createElement("div");
+        drop.className = "raindrop";
+        drop.style.left = Math.random() * 100 + "vw";
+        drop.style.animationDelay = Math.random() * 2 + "s";
+        drop.style.animationDuration = 1 + Math.random() * 1.5 + "s";
+        rainLayer.appendChild(drop);
+    }
+</script>
+
+</body>
+</html>

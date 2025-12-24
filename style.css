@@ -1,0 +1,123 @@
+/* =========================
+   NAVIGATION BAR
+   ========================= */
+   .navbar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px 20px;
+    z-index: 10;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.navbar a {
+    position: relative;
+    color: #e8dfe9;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 10px 26px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.35s ease;
+}
+
+/* Soft glowing ring behind link */
+.navbar a::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(
+        120deg,
+        rgba(244, 180, 197, 0.6),
+        rgba(177, 156, 245, 0.6)
+    );
+    opacity: 0;
+    filter: blur(10px);
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+.navbar a:hover::before {
+    opacity: 1;
+}
+
+.navbar a:hover {
+    color: #f4b4c5;
+    transform: translateY(-6px) scale(1.05);
+    box-shadow:
+        inset 0 0 14px rgba(255, 255, 255, 0.3),
+        0 20px 40px rgba(244, 180, 197, 0.4);
+}
+.idol-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.idol-section img {
+    width: 250px;
+    border-radius: 15px;
+    border: 4px solid #fdb927;
+}
+
+.idol-text {
+    flex: 1;
+}
+.idol-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.idol-section img {
+    width: 250px;
+    border-radius: 15px;
+    border: 4px solid #fdb927;
+}
+
+.idol-text {
+    flex: 1;
+}
+
+.stats-box {
+    background-color: #111;
+    padding: 15px;
+    border-left: 4px solid #fdb927;
+    margin: 15px 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff8c00, #ffb347);
+    color: #ffffff;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.4s ease;
+}
+
+/* ✅ SCALE PAGE WHEN MOUSE IS ON THE PAGE */
+body:hover .container {
+    transform: scale(1.015);
+}

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why I Love Joji</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('Joji.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #e8dfe9;
+            font-family: "Poppins", sans-serif;
+            overflow-x: hidden;
+        }
+
+        .snow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .flake {
+            position: absolute;
+            top: -20px;
+            color: white;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+                opacity: 0.2;
+            }
+        }
+
+        .glow {
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.4;
+            animation: float 10s ease-in-out infinite alternate;
+            z-index: 2;
+        }
+
+        .pink { background: #d87aa3; top: 10%; left: 10%; }
+        .purple { background: #b19cf5; top: 50%; right: 5%; animation-delay: 3s; }
+
+        @keyframes float {
+            to { transform: translateY(-50px); }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #f4b4c5;
+        }
+
+        h2 {
+            font-weight: 400;
+            color: #e0d6e1;
+            margin-top: 25px;
+        }
+
+        .card {
+            margin: 40px auto;
+            padding: 35px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 85%;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            border-color: #f4b4c5;
+        }
+
+        /* Joji image */
+        .joji-img {
+            width: 260px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .button {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 12px 30px;
+            background: #c76485;
+            color: white;
+            border-radius: 40px;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            background: #e792a9;
+            box-shadow: 0 0 15px rgba(231, 146, 169, 0.7);
+        }
+
+        footer {
+            margin-top: 50px;
+            color: #8f8291;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="snow" id="snowLayer"></div>
+
+<div class="glow pink"></div>
+<div class="glow purple"></div>
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="basketball.html">Basketball</a>
+    <a href="gaming.html">Gaming</a>
+</div>
+
+<div class="container">
+
+    <h1>Music</h1>
+    <h2>The Soundtrack to My Emotions</h2>
+
+    <!-- Image section -->
+    <div class="card">
+        <h2>Joji</h2>
+        <img src="Joji.jpg" alt="Joji" class="joji-img">
+    </div>
+
+    <!-- Who is Joji -->
+    <div class="card">
+        <h2>Who is Joji?</h2>
+        <p>
+            Joji, born George Miller, is a singer, songwriter, and producer known for his
+            emotionally raw and atmospheric sound. He transitioned from internet fame
+            to becoming a respected artist, using music as a way to express vulnerability,
+            loneliness, and self-reflection.
+        </p>
+    </div>
+
+    <!-- Life & Journey -->
+    <div class="card">
+        <h2>His Life & Journey</h2>
+        <p>
+            Joji started his creative career on YouTube, where he gained massive attention
+            for his humor and characters. Eventually, he stepped away from that world
+            to focus entirely on music, choosing authenticity over fame.
+            <br><br>
+            His journey shows growth — from chaos and comedy to quiet introspection
+            and emotional honesty.
+        </p>
+    </div>
+
+    <!-- Music themes -->
+    <div class="card">
+        <h2>His Music & Themes</h2>
+        <p>
+            Joji’s music explores themes of love, heartbreak, isolation, and nostalgia.
+            His sound blends lo-fi, R&B, and alternative pop, creating songs that feel
+            personal and late-night introspective.
+            <br><br>
+            Albums like <strong>Nectar</strong> and <strong>SMITHEREENS</strong> feel like
+            emotional diaries — soft, imperfect, and real.
+        </p>
+    </div>
+
+    <!-- Notable songs -->
+    <div class="card">
+        <h2>Notable Songs</h2>
+        <p>
+            • Slow Dancing in the Dark  
+            <br>• Sanctuary  
+            <br>• Like You Do  
+            <br>• Run  
+            <br>• Glimpse of Us  
+        </p>
+        <a class="button" href="https://open.spotify.com/album/2hEnymoejldpuxSdTnkard">
+            My Favorite Albums
+        </a>
+    </div>
+
+    <footer>
+        Made with love — Inspired by Joji ♡
+    </footer>
+</div>
+
+<script>
+    const snowLayer = document.getElementById("snowLayer");
+    const snowflakeChars = ["•", "✦", "❅"];
+
+    function createSnowflake() {
+        const flake = document.createElement("div");
+        flake.className = "flake";
+        flake.innerText = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
+        flake.style.left = Math.random() * window.innerWidth + "px";
+        flake.style.fontSize = 8 + Math.random() * 12 + "px";
+        flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+        snowLayer.appendChild(flake);
+        setTimeout(() => flake.remove(), 8000);
+    }
+
+    setInterval(createSnowflake, 100);
+</script>
+
+</body>
+</html>
