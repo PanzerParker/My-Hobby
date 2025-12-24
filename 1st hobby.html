@@ -17,7 +17,6 @@
             font-family: "Poppins", sans-serif;
             overflow-x: hidden;
         }
-
         .snow {
             position: fixed;
             top: 0;
@@ -41,7 +40,6 @@
                 opacity: 0.2;
             }
         }
-
         .glow {
             position: absolute;
             width: 350px;
@@ -52,14 +50,32 @@
             animation: float 10s ease-in-out infinite alternate;
             z-index: 2;
         }
-
         .pink { background: #d87aa3; top: 10%; left: 10%; }
         .purple { background: #b19cf5; top: 50%; right: 5%; animation-delay: 3s; }
 
         @keyframes float {
             to { transform: translateY(-50px); }
         }
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+            z-index: 5;
+        }
 
+        .navbar a {
+            margin: 0 15px;
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .navbar a:hover {
+            color: #00ffff;
+        }
         .container {
             max-width: 900px;
             margin: auto;
@@ -96,7 +112,6 @@
             border-color: #f4b4c5;
         }
 
-        /* Joji image */
         .joji-img {
             width: 260px;
             border-radius: 20px;
@@ -134,10 +149,10 @@
 <div class="glow pink"></div>
 <div class="glow purple"></div>
 <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="music.html">Music</a>
-    <a href="basketball.html">Basketball</a>
-    <a href="gaming.html">Gaming</a>
+    <a href="My hobby.html">Home</a>
+    <a href="1st hobby.html">Music</a>
+    <a href="2nd hobby.html">Basketball</a>
+    <a href="3rd Hobby.html">Gaming</a>
 </div>
 
 <div class="container">
@@ -145,13 +160,11 @@
     <h1>Music</h1>
     <h2>The Soundtrack to My Emotions</h2>
 
-    <!-- Image section -->
     <div class="card">
         <h2>Joji</h2>
         <img src="Joji.jpg" alt="Joji" class="joji-img">
     </div>
 
-    <!-- Who is Joji -->
     <div class="card">
         <h2>Who is Joji?</h2>
         <p>
@@ -162,7 +175,6 @@
         </p>
     </div>
 
-    <!-- Life & Journey -->
     <div class="card">
         <h2>His Life & Journey</h2>
         <p>
@@ -175,20 +187,15 @@
         </p>
     </div>
 
-    <!-- Music themes -->
     <div class="card">
         <h2>His Music & Themes</h2>
         <p>
             Joji’s music explores themes of love, heartbreak, isolation, and nostalgia.
             His sound blends lo-fi, R&B, and alternative pop, creating songs that feel
             personal and late-night introspective.
-            <br><br>
-            Albums like <strong>Nectar</strong> and <strong>SMITHEREENS</strong> feel like
-            emotional diaries — soft, imperfect, and real.
         </p>
     </div>
 
-    <!-- Notable songs -->
     <div class="card">
         <h2>Notable Songs</h2>
         <p>
@@ -228,3 +235,4 @@
 
 </body>
 </html>
+
