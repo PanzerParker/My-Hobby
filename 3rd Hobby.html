@@ -17,6 +17,7 @@
             font-family: "Poppins", sans-serif;
             overflow-x: hidden;
         }
+
         .snow {
             position: fixed;
             top: 0;
@@ -40,6 +41,7 @@
                 opacity: 0.2;
             }
         }
+
         .glow {
             position: absolute;
             width: 350px;
@@ -57,6 +59,7 @@
         @keyframes float {
             to { transform: translateY(-50px); }
         }
+
         .navbar {
             position: sticky;
             top: 0;
@@ -77,6 +80,7 @@
         .navbar a:hover {
             color: #fff176;
         }
+
         .container {
             max-width: 900px;
             margin: auto;
@@ -96,6 +100,7 @@
             color: #ffeb3b;
             margin-top: 25px;
         }
+
         .card {
             margin: 40px auto;
             padding: 35px;
@@ -111,12 +116,14 @@
             transform: scale(1.03);
             border-color: #ffeb3b;
         }
+
         .game-img {
             width: 260px;
             border-radius: 20px;
             margin-top: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
+
         .button {
             margin-top: 20px;
             display: inline-block;
@@ -137,6 +144,189 @@
             margin-top: 60px;
             color: #ffeb3b;
             font-size: 0.8rem;
+        }
+
+        .game-section {
+            margin: 60px auto 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+        .game-section h2 {
+            font-size: 2rem;
+            color: #ffeb3b;
+            margin-bottom: 5px;
+        }
+
+        .game-section p {
+            color: #fff;
+            margin: 5px 0 20px 0;
+        }
+
+        .info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .info div {
+            background: rgba(0,0,0,0.4);
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: 1px solid #ffeb3b;
+        }
+
+        .info span {
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: block;
+        }
+
+        .info label {
+            font-size: 0.8rem;
+            color: #fff;
+        }
+
+        .btns {
+            margin-bottom: 20px;
+        }
+
+        .btns button {
+            background: #ffeb3b;
+            color: #1b1b2f;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btns button:hover {
+            background: #fff176;
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(4, 110px);
+            gap: 12px;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .mem-card {
+            width: 110px;
+            height: 130px;
+            position: relative;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            transition: transform 0.4s;
+        }
+
+        .mem-card.flip {
+            transform: rotateY(180deg);
+        }
+
+        .mem-card-front, .mem-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mem-card-back {
+            background: rgba(0,0,0,0.5);
+            border: 2px solid #ffeb3b;
+            font-size: 2.2rem;
+        }
+
+        .mem-card-front {
+            background: rgba(30, 30, 80, 0.85);
+            border: 2px solid #ffeb3b;
+            transform: rotateY(180deg);
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        .mem-card-front img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .mem-card-front .name {
+            font-size: 0.65rem;
+            color: #ffeb3b;
+            margin-top: 6px;
+            font-weight: 600;
+        }
+
+        .mem-card.matched .mem-card-front {
+            border-color: #4caf50;
+            box-shadow: 0 0 12px rgba(76,175,80,0.6);
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 10;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #popup.show {
+            display: flex;
+        }
+
+        .popup-box {
+            background: #1b1b2f;
+            border: 3px solid #ffeb3b;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .popup-box h2 {
+            font-size: 2rem;
+            color: #ffeb3b;
+            margin-bottom: 10px;
+        }
+
+        .popup-box p {
+            color: #fff;
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .popup-box button {
+            margin-top: 20px;
+            font-size: 1rem;
+            background: #ffeb3b;
+            color: #1b1b2f;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-family: "Poppins", sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .popup-box button:hover {
+            background: #fff176;
         }
     </style>
 </head>
@@ -173,7 +363,7 @@
         <h2>Strategy & Skill</h2>
         <p>
             Winning depends on smart decisions, elixir management, timing, and predicting
-            your opponent’s moves.
+            your opponent's moves.
         </p>
     </div>
 
@@ -196,12 +386,36 @@
         <p>
             Clash Royale challenges my thinking and provides endless entertainment.
         </p>
-        <a class="button" href="https://supercell.com/en/games/clashroyale/">Back to Gaming</a>
+        <a class="button" href="https://supercell.com/en/games/clashroyale/">Visit Clash Royale</a>
     </div>
 
-    <footer>
-        © 2025 Clash Royale Fan Page
-    </footer>
+</div>
+<div class="game-section">
+    <h2>⚔️ Memory Match Mini Game</h2>
+    <p>Match all the Clash Royale characters!</p>
+
+    <div class="info">
+        <div><span id="moves">0</span><label>Moves</label></div>
+        <div><span id="timer">00:00</span><label>Time</label></div>
+        <div><span id="matches">0</span><label>Matches</label></div>
+    </div>
+
+    <div class="btns">
+        <button onclick="startGame()">New Game</button>
+        <button onclick="startGame()">Restart</button>
+    </div>
+
+    <div id="board"></div>
+</div>
+
+<footer style="position:relative; z-index:3; padding-bottom: 30px;">© 2025 Clash Royale Fan Page</footer>
+<div id="popup">
+    <div class="popup-box">
+        <h2>🏆 You Win!</h2>
+        <p>Time: <strong id="winTime">00:00</strong></p>
+        <p>Moves: <strong id="winMoves">0</strong></p>
+        <button onclick="closePopup()">Play Again</button>
+    </div>
 </div>
 
 <script>
@@ -220,6 +434,126 @@
     }
 
     setInterval(createSnowflake, 120);
+
+    const characters = [
+        { name: "Archer Queen", img: "archer-queen.png", emoji: "👸" },
+        { name: "Barbarian", img: "barbarian.png", emoji: "⚔️" },
+        { name: "Wizard", img: "wizard.png", emoji: "🧙" },
+        { name: "Giant", img: "giant.png", emoji: "👹" },
+        { name: "Dragon", img: "dragon.png", emoji: "🐉" },
+        { name: "Knight", img: "knight.png", emoji: "🛡️" },
+        { name: "P.E.K.K.A", img: "pekka.png", emoji: "🤖" },
+        { name: "Goblin", img: "goblin.png", emoji: "👺" }
+    ];
+
+    let flipped = [];
+    let matched = 0;
+    let moves = 0;
+    let canFlip = true;
+    let timerInterval = null;
+    let seconds = 0;
+
+    function startGame() {
+        clearInterval(timerInterval);
+        seconds = 0;
+        moves = 0;
+        matched = 0;
+        flipped = [];
+        canFlip = true;
+
+        document.getElementById("moves").textContent = "0";
+        document.getElementById("timer").textContent = "00:00";
+        document.getElementById("matches").textContent = "0";
+        document.getElementById("popup").classList.remove("show");
+
+        let deck = [...characters, ...characters];
+        deck.sort(() => Math.random() - 0.5);
+
+        let board = document.getElementById("board");
+        board.innerHTML = "";
+
+        deck.forEach((char, i) => {
+            let card = document.createElement("div");
+            card.className = "mem-card";
+            card.dataset.name = char.name;
+
+            card.innerHTML = `
+                <div class="mem-card-front">
+                    <img src="${char.img}" alt="${char.name}" onerror="this.style.display='none'">
+                    <div class="name">${char.name}</div>
+                </div>
+                <div class="mem-card-back">🛡️</div>
+            `;
+
+            card.addEventListener("click", function() {
+                flipCard(this);
+            });
+
+            board.appendChild(card);
+        });
+    }
+
+    function flipCard(card) {
+        if (!canFlip) return;
+        if (card.classList.contains("flip")) return;
+        if (card.classList.contains("matched")) return;
+
+        if (moves === 0 && flipped.length === 0) {
+            timerInterval = setInterval(function() {
+                seconds++;
+                let m = String(Math.floor(seconds / 60)).padStart(2, "0");
+                let s = String(seconds % 60).padStart(2, "0");
+                document.getElementById("timer").textContent = m + ":" + s;
+            }, 1000);
+        }
+
+        card.classList.add("flip");
+        flipped.push(card);
+
+        if (flipped.length === 2) {
+            canFlip = false;
+            moves++;
+            document.getElementById("moves").textContent = moves;
+
+            let card1 = flipped[0];
+            let card2 = flipped[1];
+
+            if (card1.dataset.name === card2.dataset.name) {
+                setTimeout(function() {
+                    card1.classList.add("matched");
+                    card2.classList.add("matched");
+                    matched++;
+                    document.getElementById("matches").textContent = matched;
+                    flipped = [];
+                    canFlip = true;
+
+                    if (matched === characters.length) {
+                        clearInterval(timerInterval);
+                        setTimeout(showWin, 500);
+                    }
+                }, 500);
+            } else {
+                setTimeout(function() {
+                    card1.classList.remove("flip");
+                    card2.classList.remove("flip");
+                    flipped = [];
+                    canFlip = true;
+                }, 1000);
+            }
+        }
+    }
+
+    function showWin() {
+        document.getElementById("winTime").textContent = document.getElementById("timer").textContent;
+        document.getElementById("winMoves").textContent = moves;
+        document.getElementById("popup").classList.add("show");
+    }
+
+    function closePopup() {
+        startGame();
+    }
+
+    startGame();
 </script>
 
 </body>
