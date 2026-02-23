@@ -1,155 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Why I Love Basketball</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why I Love Basketball</title>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('basketball.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #c97112;
-            font-family: "Poppins", sans-serif;
-            overflow-x: hidden;
-        }
-        .snow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    background: url('basketball.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #c97112;
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
 
-        .flake {
-            position: absolute;
-            top: -20px;
-            color: white;
-            animation: fall linear infinite;
-        }
+html {
+    scroll-behavior: smooth;
+}
+.snow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
 
-        @keyframes fall {
-            to {
-                transform: translateY(110vh) rotate(360deg);
-                opacity: 0.2;
-            }
-        }
-        .glow {
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            filter: blur(140px);
-            opacity: 0.4;
-            animation: float 10s ease-in-out infinite alternate;
-            z-index: 2;
-        }
+.flake {
+    position: absolute;
+    top: -20px;
+    animation: fall linear infinite;
+}
 
-        .pink { background: #d87aa3; top: 10%; left: 10%; }
-        .purple { background: #b19cf5; top: 50%; right: 5%; animation-delay: 3s; }
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}
+.glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.4;
+    animation: float 10s ease-in-out infinite alternate;
+    z-index: 2;
+}
 
-        @keyframes float {
-            to { transform: translateY(-50px); }
-        }
-        .navbar {
-            position: sticky;
-            top: 0;
-            background: rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
-            padding: 15px;
-            text-align: center;
-            z-index: 5;
-        }
+.pink { background: #d87aa3; top: 10%; left: 10%; }
+.purple { background: #b19cf5; top: 50%; right: 5%; animation-delay: 3s; }
 
-        .navbar a {
-            margin: 0 15px;
-            color: #ffd700;
-            text-decoration: none;
-            font-weight: 600;
-        }
+@keyframes float {
+    to { transform: translateY(-50px); }
+}
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    text-align: center;
+    z-index: 5;
+}
 
-        .navbar a:hover {
-            color: #00ffff;
-        }
+.navbar a {
+    margin: 0 15px;
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 60px 20px;
-            text-align: center;
-            position: relative;
-            z-index: 3;
-        }
+.navbar a:hover {
+    color: #00ffff;
+}
 
-        h1 {
-            font-size: 4rem;
-            color: #f4b4c5;
-        }
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
 
-        h2 {
-            font-weight: 400;
-            color: #e0d6e1;
-            margin-top: 25px;
-        }
+h1 {
+    font-size: 4rem;
+    color: #f4b4c5;
+}
 
-        .card {
-            margin: 40px auto;
-            padding: 35px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 20px;
-            backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            width: 85%;
-            transition: 0.3s ease;
-        }
+h2 {
+    font-weight: 400;
+    color: #e0d6e1;
+    margin-top: 25px;
+}
 
-        .card:hover {
-            transform: scale(1.03);
-            border-color: #f4b4c5;
-        }
+/* Cards */
+.card {
+    margin: 40px auto;
+    padding: 35px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 85%;
+    transition: 0.3s ease;
+}
 
-        .joji-img {
-            width: 260px;
-            border-radius: 20px;
-            margin-top: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+.card:hover {
+    transform: scale(1.03);
+    border-color: #f4b4c5;
+}
 
-        .button {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 12px 30px;
-            background: #c76485;
-            color: white;
-            border-radius: 40px;
-            text-decoration: none;
-        }
+.joji-img {
+    width: 260px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-        .button:hover {
-            background: #b85f77;
-            box-shadow: 0 0 15px rgba(231, 146, 169, 0.7);
-        }
+.button {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 30px;
+    background: #c76485;
+    color: white;
+    border-radius: 40px;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-        footer {
-            margin-top: 50px;
-            color: #8f8291;
-            font-size: 0.8rem;
-        }
-    </style>
+.button:hover {
+    background: #b85f77;
+    box-shadow: 0 0 15px rgba(231, 146, 169, 0.7);
+}
+#gameStats {
+    margin: 15px 0;
+    font-size: 18px;
+}
+
+#gameBox {
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+#basketballTarget {
+    font-size: 40px;
+    position: absolute;
+    cursor: pointer;
+    display: none;
+    transition: transform 0.2s;
+}
+
+#basketballTarget:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    margin-top: 50px;
+    color: #8f8291;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2.5rem; }
+    .card { width: 95%; }
+}
+</style>
 </head>
 
 <body>
 
 <div class="snow" id="snowLayer"></div>
-
 <div class="glow pink"></div>
 <div class="glow purple"></div>
+
 <div class="navbar">
     <a href="My hobby.html">Home</a>
     <a href="1st hobby.html">Music</a>
@@ -159,77 +196,118 @@
 
 <div class="container">
 
-    <h1>Basketball</h1>
-    <h2>More Than Just a Game</h2>
+<h1>Basketball</h1>
+<h2>More Than Just a Game</h2>
 
-    <div class="card">
-        <h2>Basketball</h2>
-        <img src="Lebron.jpg" alt="Basketball" class="joji-img">
+<div class="card">
+    <h2>Basketball</h2>
+    <img src="Lebron.jpg" alt="LeBron James playing basketball" class="joji-img">
+</div>
+
+<div class="card">
+    <h2>What is Basketball?</h2>
+    <p>
+        Basketball is a fast-paced team sport combining skill,
+        strategy, and athleticism.
+    </p>
+</div>
+
+<div class="card">
+    <h2>Why I Love Basketball</h2>
+    <p>
+        It challenges both my body and mind.
+        Every game helps me improve and grow.
+    </p>
+</div>
+<div class="card">
+    <h2>🏀 Mini Game: Click The Basketball!</h2>
+    <p>Click the moving basketball as many times as you can in 20 seconds!</p>
+
+    <div id="gameStats">
+        <span id="gameScore">Score: 0</span> |
+        <span id="gameTimer">Time: 20</span>
     </div>
 
-    <div class="card">
-        <h2>What is Basketball?</h2>
-        <p>
-            Basketball is a fast-paced team sport that combines skill, strategy,
-            and athleticism. Played on courts around the world, it brings people
-            together through competition, teamwork, and passion.
-        </p>
-    </div>
+    <button id="gameStart" class="button">Start Game</button>
 
-    <div class="card">
-        <h2>My Journey With Basketball</h2>
-        <p>
-            Basketball has been a constant part of my life, teaching me discipline,
-            patience, and confidence. Every game is a chance to improve and push
-            myself further.
-        </p>
+    <div id="gameBox">
+        <div id="basketballTarget">🏀</div>
     </div>
+</div>
 
-    <div class="card">
-        <h2>Why I Love Basketball</h2>
-        <p>
-            I love basketball because it challenges both my body and mind.
-            It requires focus, teamwork, and determination.
-        </p>
-    </div>
+<footer>
+Made with passion
+</footer>
 
-    <div class="card">
-        <h2>Favorite Players</h2>
-        <p>
-            • LeBron James  
-            <br>• Stephen Curry  
-            <br>• Kobe Bryant  
-            <br>• Michael Jordan  
-            <br>• Kevin Durant  
-        </p>
-        <a class="button" href="https://www.nba.com">
-            Learn More About Basketball
-        </a>
-    </div>
-
-    <footer>
-        Made with passion
-    </footer>
 </div>
 
 <script>
-    const snowLayer = document.getElementById("snowLayer");
-    const snowflakeChars = ["🏀"];
+const snowLayer = document.getElementById("snowLayer");
+function createSnowflake() {
+    const flake = document.createElement("div");
+    flake.className = "flake";
+    flake.innerText = "🏀";
+    flake.style.left = Math.random() * window.innerWidth + "px";
+    const duration = 4000 + Math.random() * 6000;
+    flake.style.fontSize = 8 + Math.random() * 12 + "px";
+    flake.style.animationDuration = duration / 1000 + "s";
+    snowLayer.appendChild(flake);
+    setTimeout(() => flake.remove(), duration);
+}
+setInterval(createSnowflake, 100);
+const gameBox = document.getElementById("gameBox");
+const gameTarget = document.getElementById("basketballTarget");
+const gameScoreDisplay = document.getElementById("gameScore");
+const gameTimerDisplay = document.getElementById("gameTimer");
+const gameStartBtn = document.getElementById("gameStart");
 
-    function createSnowflake() {
-        const flake = document.createElement("div");
-        flake.className = "flake";
-        flake.innerText = snowflakeChars[Math.floor(Math.random() * snowflakeChars.length)];
-        flake.style.left = Math.random() * window.innerWidth + "px";
-        flake.style.fontSize = 8 + Math.random() * 12 + "px";
-        flake.style.animationDuration = 4 + Math.random() * 6 + "s";
-        snowLayer.appendChild(flake);
-        setTimeout(() => flake.remove(), 8000);
-    }
+let gameScore = 0;
+let gameTime = 20;
+let moveInterval;
+let timerInterval;
 
-    setInterval(createSnowflake, 100);
+function moveTarget() {
+    const maxX = gameBox.clientWidth - 50;
+    const maxY = gameBox.clientHeight - 50;
+
+    gameTarget.style.left = Math.random() * maxX + "px";
+    gameTarget.style.top = Math.random() * maxY + "px";
+}
+
+gameTarget.addEventListener("click", () => {
+    gameScore++;
+    gameScoreDisplay.textContent = "Score: " + gameScore;
+    moveTarget();
+});
+
+gameStartBtn.addEventListener("click", () => {
+    gameScore = 0;
+    gameTime = 20;
+
+    gameScoreDisplay.textContent = "Score: 0";
+    gameTimerDisplay.textContent = "Time: 20";
+
+    gameStartBtn.style.display = "none";
+    gameTarget.style.display = "block";
+
+    moveTarget();
+
+    moveInterval = setInterval(moveTarget, 700);
+
+    timerInterval = setInterval(() => {
+        gameTime--;
+        gameTimerDisplay.textContent = "Time: " + gameTime;
+
+        if (gameTime <= 0) {
+            clearInterval(moveInterval);
+            clearInterval(timerInterval);
+            gameTarget.style.display = "none";
+            gameStartBtn.style.display = "inline-block";
+            alert("Game Over! Your score: " + gameScore);
+        }
+    }, 1000);
+});
 </script>
 
 </body>
 </html>
-
